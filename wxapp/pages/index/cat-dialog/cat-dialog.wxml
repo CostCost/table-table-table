@@ -1,0 +1,66 @@
+<view class="mask" catchtouchstart="touchMask"></view>
+<view class="category-dialog">
+  <view class="category-dialog-title">分类</view>
+  <view class="category-dialog-menu">
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-category="G" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['G']}}"></view>
+        <view class="category-dialog-btn-text">其他非金属</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-category="I" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['I']}}"></view>
+        <view class="category-dialog-btn-text">稀有气体</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-category="A" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['A']}}"></view>
+        <view class="category-dialog-btn-text">碱金属</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-category="B" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['B']}}"></view>
+        <view class="category-dialog-btn-text">碱土金属</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-category="E" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['E']}}"></view>
+        <view class="category-dialog-btn-text">类金属</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-category="H" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['H']}}"></view>
+        <view class="category-dialog-btn-text">卤素</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-category="D" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['D']}}"></view>
+        <view class="category-dialog-btn-text">后过渡金属</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-category="C" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['C']}}"></view>
+        <view class="category-dialog-btn-text">过渡金属</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-category="J" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['J']}}"></view>
+        <view class="category-dialog-btn-text">镧系金属</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-category="K" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['K']}}"></view>
+        <view class="category-dialog-btn-text">锕系金属</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-category="L" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:{{colors['L']}}"></view>
+        <view class="category-dialog-btn-text">超锕系元素</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-category="" bindtap="itemClick">
+        <view class="category-dialog-btn-color" style="background:linear-gradient({{colors['G']}}, {{colors['E']}});"></view>
+        <view class="category-dialog-btn-text">全部元素</view>
+      </view>
+    </view>
+  </view>
+</view>

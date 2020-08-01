@@ -1,0 +1,24 @@
+$z-index: 500;
+.drop-menu-mask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z-index;
+}
+.drop-menu{
+    background: var(--bg-3);
+    border-radius: 1px;
+
+    position: fixed;
+    min-width: 100px;
+    max-height: 85vh;
+    z-index: $z-index;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0px 1px 3px var(--pg);
+
+    display: flex;
+    flex-direction: column;
+}

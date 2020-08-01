@@ -1,0 +1,90 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 22px;
+  padding-bottom: 22px; }
+  .logo .image {
+    width: 86px;
+    height: 86px; }
+  .logo .name {
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 2px; }
+  .logo .version {
+    font-size: 13px; }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid var(--fg-3);
+  background: var(--bg-0); }
+  .header .icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .header .title {
+    font-size: 15px; }
+
+.celler {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 64px;
+  border-top: 1px solid var(--fg-3);
+  padding-right: 14px; }
+  .celler .left {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .celler .left .icon {
+      width: 42px;
+      height: 42px;
+      background: red;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  .celler .item-content {
+    flex: 1; }
+    .celler .item-content .title {
+      font-size: 14px;
+      padding-bottom: 2px; }
+    .celler .item-content .desc {
+      font-size: 12px; }
+  .celler .item-content:first-child {
+    padding-left: 14px;
+    padding-right: 14px; }
+  .celler .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px; }
+    .celler .right .oa-btn {
+      color: var(--fg);
+      border-radius: 2px;
+      border: 1px solid var(--fg);
+      font-size: 13px;
+      line-height: 13px;
+      padding: 6px 4px; }
+    .celler .right .oa-btn-hover {
+      color: var(--fg-1);
+      border: 1px solid var(--fg-1); }
+
+.text-view {
+  padding: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-sizing: border-box;
+  border-top: 1px solid var(--fg-3);
+  font-size: 14px; }
+
+.an {
+  color: var(--fg-2); }

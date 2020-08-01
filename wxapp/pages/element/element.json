@@ -1,0 +1,14 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "cell-list": "/components/cell-list/cell-list",
+    "cell": "/components/cell/cell",
+    "cell-content": "/components/cell-content/cell-content",
+    "alet": "/components/alet/alet",
+    "seed-invite": "/components/seed-invite/seed-invite",
+    "oxidation": "./oxidation/oxidation",
+    "nfpa": "./nfpa/nfpa",
+    "nice-page": "./nice-page/nice-page",
+    "shell-alert": "./shell-alert/shell-alert"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "filter-dialog": "./filter-dialog/filter-dialog",
+    "list-item": "../../components/list-item/list-item"
+  }
+}

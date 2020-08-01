@@ -1,0 +1,13 @@
+<!--pages/element/oxidation/oxidation.wxml-->
+<view class="oxidation">
+    <view class="line">
+        <view wx:for="{{6}}" wx:key="index" class="cir cir1 {{line1[index] ? 'active' : ''}}">
+            {{line1[index] ? (line1[index] == 0 ? line1[index] : '-'+ line1[index]): '-'}}
+        </view>
+    </view>
+    <view class="line">
+        <view wx:for="{{9}}" wx:key="index" class="cir cir2 {{line2[index] ? 'active' : ''}}">
+            {{line2[index] ? '+'+line2[index] : '-'}}
+        </view>
+    </view>
+</view>

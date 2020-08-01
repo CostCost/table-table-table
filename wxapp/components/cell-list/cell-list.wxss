@@ -1,0 +1,14 @@
+.cell-list {
+  border-top: 1px solid var(--fg-3); }
+  .cell-list .cell-header {
+    min-height: 48px;
+    background: var(--bg-0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 16px;
+    border-bottom: 1px solid var(--fg-3); }
+    .cell-list .cell-header .icon {
+      padding-right: 8px; }
+    .cell-list .cell-header .text {
+      font-size: 13px; }

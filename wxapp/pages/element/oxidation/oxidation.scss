@@ -1,0 +1,34 @@
+$size: 22px;
+
+.oxidation{
+    display: flex;
+    flex-direction: column;
+    .line{
+        display: flex;
+        flex-direction: row;
+        &:first-child{
+            margin-bottom: 4px;
+        }
+        .cir{
+            width:$size;
+            height:$size;
+            background:#2e2e3a;
+            color: var(--fg);
+            border-radius: 50%;
+            line-height:$size;
+            font-size:10px;
+            text-align:center;
+            color: #ffffff;
+            margin-right: 4px;
+        }
+        .cir1.active{
+            background: #1565C0;
+            &:first-child{
+                background: #0288D1;
+            }
+        }
+        .cir2.active{
+            background: #C62828;
+        }
+    }
+}

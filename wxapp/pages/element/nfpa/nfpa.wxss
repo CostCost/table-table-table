@@ -1,0 +1,36 @@
+.nfpa {
+  position: relative;
+  width: 90px;
+  height: 90px; }
+  .nfpa .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .nfpa .n-fir {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    font-size: 13px; }
+  .nfpa .n-hea {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px; }
+  .nfpa .n-act {
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 13px; }
+  .nfpa .n-spe {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 13px; }

@@ -1,0 +1,70 @@
+<view class="page" data-theme="dark">
+    <swiper class="swiper" bindchange="onChange" indicator-dots="{{true}}" autoplay="{{false}}" circular="{{false}}" vertical="{{false}}" duration="{{360}}">
+        <swiper-item>
+            <view class="item">
+                <view class="desc">自然界中提取的着色剂，第一种也是最有名的酸碱指示剂之一。</view>
+                <view class="content">
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#db3831, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#db3831;">酸性</view>
+                        <view class="desc">{{'[H+] > [OH-] pH < 7'}}</view>
+                    </view>
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#5f2b8d, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#5f2b8d;">中性</view>
+                        <view class="desc">{{'[H+] = [OH-] pH = 7'}}</view>
+                    </view>
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#1c67c4, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#1c67c4;">碱性</view>
+                        <view class="desc">{{'[OH-] > [H+] pH > 7'}}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="item">
+                <view class="desc">三苯甲烷染料，变色范围为无色到红紫色 (树莓色)。</view>
+                <view class="content">
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#ffffff, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#ffffff;">酸性</view>
+                        <view class="desc">{{'[H+] > [OH-] pH < 7'}}</view>
+                    </view>
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#ffffff, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#ffffff;">中性</view>
+                        <view class="desc">{{'[H+] = [OH-] pH = 7'}}</view>
+                    </view>
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#db3831, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#db3831;">碱性</view>
+                        <view class="desc">{{'[OH-] > [H+] pH > 7'}}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="item">
+                <view class="desc">人工合成的有机偶氮基染料，有名的酸碱指示剂。</view>
+                <view class="content">
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#da0360, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#da0360;">酸性</view>
+                        <view class="desc">{{'[H+] > [OH-] pH < 7'}}</view>
+                    </view>
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#fd610a, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#fd610a;">中性</view>
+                        <view class="desc">{{'[H+] = [OH-] pH = 7'}}</view>
+                    </view>
+                    <view class="content-item">
+                        <view class="color" style="background: linear-gradient(#f1be00, rgba(0,0,0,0));"></view>
+                        <view class="name" style="color:#f1be00;">碱性</view>
+                        <view class="desc">{{'[OH-] > [H+] pH > 7'}}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

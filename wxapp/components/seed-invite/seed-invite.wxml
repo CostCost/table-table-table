@@ -1,0 +1,20 @@
+<view wx:if="{{realShow}}" class="seed-invite">
+    <view class="bgt bgt1">Hello</view>
+    <view class="bgt bgt2">您好</view>
+    <block wx:if="{{step == '0'}}">
+        <view class="text">我们想邀请您成为珍贵的种子用户</view>
+        <view class="subtext">*成为种子用户，您可以获得内测机会，我们的产品也将根据您的建议变得更好</view>
+        <view class="btns">
+            <button class="btn cancel" bindtap="nextTime">下次再说</button>
+            <button class="btn ok shake" data-step="1" bindtap="changeStep">接受邀请</button>
+        </view>
+    </block>
+    <block wx:if="{{step == '1'}}">
+        <view class="text">请您添加我们的微信好友</view>
+        <view class="subtext">微信号: {{wxid}}</view>
+        <view class="btns">
+            <button wx:if="{{showCloseBtn}}" class="btn cancel" bindtap="close">已添加好友</button>
+            <button class="btn ok shake" bindtap="copyId">复制微信号</button>
+        </view>
+    </block>
+</view>

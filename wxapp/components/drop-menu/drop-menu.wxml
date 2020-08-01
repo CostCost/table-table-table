@@ -1,0 +1,9 @@
+<view class="drop custom-class" bindtap="showDropMenu">
+    <slot name="content"></slot>
+</view>
+<view class="drop-menu-mask" wx:if="{{isShowDropMenu}}" catchtouchstart="hideDropMenu">
+</view>
+
+<view class="drop-menu" wx:if="{{isShowDropMenu}}" style="{{layout}}">
+    <slot></slot>
+</view>

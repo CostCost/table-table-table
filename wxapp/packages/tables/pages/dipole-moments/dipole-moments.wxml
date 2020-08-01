@@ -1,0 +1,6 @@
+<view class="page" data-theme="dark">
+    <view class="col" wx:for="{{list}}" wx:key="index" style="border-color:{{item[2]}};">
+        <view class="value">{{item[1]}}</view>
+        <rich-text class="name" nodes="{{item[0]}}"></rich-text>
+    </view>
+</view>

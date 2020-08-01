@@ -1,0 +1,106 @@
+<view class="page" data-theme="dark">
+    <!-- <view class="image-item">
+        <image class="image" src="/assets/prew2.jpg" mode="aspectFill"/>
+        <view class="mask"/>
+        <view class="content">
+            <view class="title">
+                <view class="icon"></view>
+                <view class="text">实用图表</view>
+            </view>
+            <view class="desc">
+                如果您要查找某些熬多久哦阿斯顿度，青年扫地机欧家居圣诞快乐就阿萨德，穷爱神的箭一安东欧佩克爱神的箭阿萨德卡哦哦啊哦圣诞节啊啥都看爱马仕低价皮皮科技阿萨德
+            </view>
+        </view>
+    </view> -->
+    <navigator class="image-item" url="/packages/tables/pages/solubility/solubility">
+        <image class="image" src="/assets/prew2.jpg" mode="aspectFill"/>
+        <view class="mask" style="border-color:#2364c0;"/>
+        <view class="content">
+            <view class="title">
+                <view class="icon" style="background:#2364c0;"></view>
+                <view class="text">溶解性表</view>
+            </view>
+            <view class="desc">
+                如果您要查找盐在水中的溶解度，请找到其阳离子所在的列和阴离子所在的行，交叉处的图标即为该种盐的溶解性信息。
+            </view>
+        </view>
+    </navigator>
+    <navigator class="image-item" url="/packages/tables/pages/color-changes/color-changes">
+        <image class="image" src="/assets/prew6.jpg" mode="aspectFill"/>
+        <view class="mask" style="border-color:#662e9b;"/>
+        <view class="content">
+            <view class="title">
+                <view class="icon" style="background:#662e9b;"></view>
+                <view class="text">常见的变色指示剂</view>
+            </view>
+            <view class="desc">
+                自然界中提取的着色剂，第一种也是最有名的酸碱指示剂之一。
+            </view>
+        </view>
+    </navigator>
+    <navigator class="image-item" url="/packages/tables/pages/dipole-moments/dipole-moments">
+        <image class="image" src="/assets/prew11.jpg" mode="aspectFill"/>
+        <view class="mask" style="border-color:#f26419;"/>
+        <view class="content">
+            <view class="title">
+                <view class="icon" style="background:#f26419;"></view>
+                <view class="text">分子的电偶极矩</view>
+            </view>
+            <view class="desc">
+                该表包含多原子物质的偶极矩，其为解决普通化学和无机化学问题所需的参考材料。适用于学校和大学生。
+            </view>
+        </view>
+    </navigator>
+    <navigator class="image-item" url="/packages/tools/pages/counter/counter">
+        <image class="image" src="/assets/prew12.jpg" mode="aspectFill"/>
+        <view class="mask" style="border-color:#f5be25"/>
+        <view class="content">
+            <view class="title">
+                <view class="icon" style="background:#f5be25"></view>
+                <view class="text">化学计算器</view>
+            </view>
+            <!-- <view class="desc">
+                分子量计算器
+            </view> -->
+        </view>
+    </navigator>
+    <navigator class="image-item" url="/packages/enjoys/pages/character/character">
+        <image class="image" src="/assets/prew_enjoy.jpg" mode="aspectFill"/>
+        <view class="mask" style="border-color:#e71d36"/>
+        <view class="content">
+            <view class="title">
+                <view class="icon" style="background:#e71d36"></view>
+                <view class="text">化学常识趣味问答</view>
+            </view>
+            <view class="desc">
+                以问答的形式随机出题，如果成绩足够完美，有机会获得精美的电子证书。用于普及化学常识。
+            </view>
+        </view>
+    </navigator>
+    <!-- ========== -->
+    <view class="hr"/>
+    <alet></alet>
+    <list-item url="/pages/admire/admire">
+        <view slot="icon" class="item-icon" style="background:#ffb600"></view>
+        <view class="item-content">
+            <view class="title">支持</view>
+            <view class="desc">您的任何支持，都是莫大的鼓励</view>
+        </view>
+    </list-item>
+    <list-item url="/pages/about/about">
+        <view slot="icon" class="item-icon" style="background:#00aef1"></view>
+        <view class="item-content">
+            <view class="title">关于</view>
+            <view class="desc">小程序基本信息</view>
+        </view>
+    </list-item>
+    <button class="share-btn" open-type="share">
+        <view class="left">
+            <view slot="icon" class="item-icon" style="background:#c41e3d"></view>
+        </view>
+        <view class="right item-content">
+            <view class="title">分享</view>
+            <view class="desc">嗨, 我建议你尝试一个很酷的化学小程序</view>
+        </view>
+    </button>
+</view>

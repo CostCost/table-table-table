@@ -1,0 +1,3 @@
+<view class="drop-menu-item" hover-class="drop-menu-item-hover" bindtap="itemClick">
+    <slot></slot>
+</view>

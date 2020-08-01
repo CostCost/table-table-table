@@ -1,0 +1,43 @@
+<view class="page" data-theme="dark">
+    <view class="top-bar">
+        <input class="input" bindinput="bindReplaceInput" placeholder="输入分子式" value="{{formula}}"/>
+    </view>
+    <view class="main">
+        <view class="scroll-view">
+            <view class="output">
+                <rich-text class="formula" nodes="{{formulaRich}}"></rich-text>
+                <view class="weight">{{util.fixed(result.weight, 2)}}</view>
+                <view class="unit">(g/mol)</view>
+                <view class="bracket" bindtap="addBracket">
+                    <iconfont name="icon-ic_brackets" size="{{22}}" color="#ffffff"></iconfont>
+                </view>
+            </view>
+            <view class="attr-header" wx:if="{{result && result.list.length > 0}}">
+                <iconfont class="icon" name="icon-ic_perc" size="{{22}}" color="#ffffff"></iconfont>
+                <view class="text">属性</view>
+            </view>
+            <view class="attr" wx:if="{{result}}" wx:for="{{result.list}}" wx:key="index">
+                <view class="left">
+                    <view class="symbol" style="background:{{item.color}};">{{item.symbol}}</view>
+                </view>
+                <view class="right">
+                    <view class="ratio">{{util.fixed(item.mass_b, 1)}}%</view>
+                    <view class="name">{{item.name}}</view>
+                    <view class="mass-result">{{util.fixed(item.all_mass, 6)}} (g/mol)</view>
+                    <view class="mass-detail">{{util.fixed(item.mass, 6)}} (g/mol) * {{item.num}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="util">
+    module.exports = {
+        fixed: function(value, len){
+            var n = parseFloat(parseFloat(value).toFixed(len))
+            if(isNaN(n)){
+                return 0;
+            }
+            return n;
+        }
+    }
+</wxs>

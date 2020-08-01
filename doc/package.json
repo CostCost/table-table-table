@@ -1,0 +1,17 @@
+{
+  "name": "doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parseArray.js",
+  "scripts": {
+    "fuck": "node parseArray"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clipboardy": "^2.3.0"
+  },
+  "devDependencies": {
+    "xml2js": "^0.4.23"
+  }
+}

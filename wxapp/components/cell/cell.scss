@@ -1,0 +1,41 @@
+.cell{
+    margin-left: 44px;
+    margin-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 48px - 8px * 2;
+    border-top: 1px solid var(--fg-3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    .slot{
+        flex: 1;
+        position: relative;
+    }
+}
+.empty{
+    color: var(--fg-2);
+}
+.hide-border{
+    border-top: 0;
+}
+.full{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 44px;
+    padding-right: 0px;
+}
+.clear{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    min-height: 0;
+}
+.clickable{
+    background: var(--fg-3);
+}

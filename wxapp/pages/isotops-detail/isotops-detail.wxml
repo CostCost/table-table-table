@@ -1,0 +1,54 @@
+<view class="page" data-theme="dark">
+    <view class="item" wx:for="{{isotops}}" wx:key="index">
+        <view class="left">
+            <view class="logo" style="background:{{color}};">{{item.symbol}}</view>
+        </view>
+        <view class="content">
+            <!-- <view >{{name}} {{item.nucleid}}</view> -->
+            <rich-text class="text-item" nodes="{{name}} <small style='color:{{util.timeColor(item.period2)}};'><sup>{{item.nucleid}}</sup></small> · {{item.spin}}"></rich-text>
+            <rich-text class="text-item" nodes="半衰期: {{item.period}} <span style='font-size:12px;color:{{util.timeColor(item.period2)}};'>{{util.timeUnit(item.period2)}}</span>"></rich-text>
+            <view class="text-item {{item.massa ? '' : 'disable'}}">同位素原子量:  {{item.massa || '-'}} <text wx:if="{{item.massa}}" style="font-size: 12px;">(g/mol)</text></view>
+        </view>
+    </view>
+</view>
+<wxs module="util">
+var Units = {
+    '4': '天',
+    'B': '小时',
+    '5': '幺秒（1E-24 秒）',
+    '9': '分钟',
+    '8': '微秒（1E-6 秒）',
+    '2': '毫秒',
+    '3': '纳秒（1E-9 秒）',
+    '7': '皮秒（1E-12 秒）',
+    '1': '秒',
+    '*': '稳定',
+    'A': '年',
+    '0': '年',//颜色是红的
+    '6': '仄秒（1E-21 秒）',
+}
+var UnitsColor = {
+    '0': '#238aaf',//'年',//颜色是红的
+    '4': '#50723c',//'天',
+    'B': '#f5be25',//'小时',
+    '9': '#dc1513',//'分钟',
+    '1': '#0a7f42',//'秒',
+    '2': '#ea7f07',//'毫秒',
+    '8': '#662e9b',//'微秒（1E-6 秒）',
+    '3': '#006da1',//'纳秒（1E-9 秒）',
+    '7': '#cf6142',//'皮秒（1E-12 秒）',
+    '6': '#c41e3d',//'仄秒（1E-21 秒）',
+    '5': '#6f7887',//'幺秒（1E-24 秒）',
+
+    '*': '#d40000',//'稳定',
+    'A': '#0f5257',//'年',
+}
+module.exports = {
+    timeUnit: function(period2){
+        return Units[period2] || '·'
+    },
+    timeColor: function(period2){
+        return UnitsColor[period2] || '#ffffff'
+    }
+}
+</wxs>

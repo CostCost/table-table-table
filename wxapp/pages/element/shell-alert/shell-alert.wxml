@@ -1,0 +1,31 @@
+<view class="mask" catchtouchstart="touchMask"></view>
+<view class="shell-alert">
+    <view class="content">
+        <view class="image-group">
+            <image class="image" src="{{eleImage}}" mode="aspectFit"></image>
+        </view>
+        <view class="text-group">
+            <view class="left">
+                <view>电子层:</view>
+                <rich-text wx:if="{{shellText}}" nodes="{{shellText}}"></rich-text>
+                <view wx:else>---</view>
+            </view>
+            <view class="right">
+                <iconfont name="icon-ic_sett_about" size="{{22}}" color="#ffffff"></iconfont>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="text-group">
+            <view class="left">
+                <view>电子排布</view>
+                <block wx:if="{{electronConfig && electronConfig.length > 0}}">
+                    <rich-text wx:for="{{electronConfig}}" wx:key="index" nodes="{{item}}"></rich-text>
+                </block>
+                <view wx:else>---</view>
+            </view>
+            <view class="right">
+                <iconfont name="icon-electron_shell_icon" size="{{22}}" color="#ffffff"></iconfont>
+            </view>
+        </view>
+    </view>
+</view>

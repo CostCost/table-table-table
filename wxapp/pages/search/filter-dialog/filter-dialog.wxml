@@ -1,0 +1,66 @@
+<view class="mask" catchtouchstart="touchMask"></view>
+<view class="category-dialog">
+  <view class="category-dialog-title">属性</view>
+  <view class="category-dialog-menu">
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-type="" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_all" size="{{16}}" color="#0a7f42"></iconfont>
+        <view class="category-dialog-btn-text">所有参数</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-type="name" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_name" size="{{16}}" color="#e71d36"></iconfont>
+        <view class="category-dialog-btn-text">元素名称</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-type="symbol" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_symbol" size="{{16}}" color="#52ade6"></iconfont>
+        <view class="category-dialog-btn-text">元素符号</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-type="number" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_number" size="{{16}}" color="#ff8000"></iconfont>
+        <view class="category-dialog-btn-text">原子序数</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-type="year" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_year" size="{{16}}" color="#c6c013"></iconfont>
+        <view class="category-dialog-btn-text">发现年份</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-type="atomic_weight" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_massa" size="{{16}}" color="#a4b9ff"></iconfont>
+        <view class="category-dialog-btn-text">原子量</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-type="density" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_plot" size="{{16}}" color="#205aad"></iconfont>
+        <view class="category-dialog-btn-text">密度</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-type="electrical_conductivity" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_electro" size="{{16}}" color="#f3501d"></iconfont>
+        <view class="category-dialog-btn-text">电导率</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-type="cas" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_cas" size="{{16}}" color="#ffb600"></iconfont>
+        <view class="category-dialog-btn-text">CAS 编号</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-type="electronegtivity" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_electrootric" size="{{16}}" color="#008577"></iconfont>
+        <view class="category-dialog-btn-text">电负性</view>
+      </view>
+    </view>
+    <view class="category-dialog-menu-row">
+      <view class="category-dialog-btn" hover-class="hover" data-type="atomic_radius" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_radius" size="{{16}}" color="#00aef1"></iconfont>
+        <view class="category-dialog-btn-text">原子半径</view>
+      </view>
+      <view class="category-dialog-btn" hover-class="hover" data-type="electrons" bindtap="itemClick">
+        <iconfont class="icon" name="icon-ic_filter_electron" size="{{16}}" color="#c67a21"></iconfont>
+        <view class="category-dialog-btn-text">电子数量</view>
+      </view>
+    </view>
+  </view>
+</view>

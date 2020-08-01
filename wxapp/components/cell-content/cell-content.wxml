@@ -1,0 +1,4 @@
+<view style="{{customStyle}}">
+    <block wx:if="{{empty}}">---</block>
+    <slot wx:else></slot>
+</view>

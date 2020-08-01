@@ -1,0 +1,6 @@
+<view class="cell {{$index == 0 ? 'hide-border' : '' }} {{full ? 'full' : ''}} {{clear ? 'clear' : ''}}" style="{{paddingV ? 'padding-top:'+paddingV+';padding-bottom:'+paddingV+';' : '' }}"
+    hover-class="{{clickable ? 'clickable' : ''}}">
+    <view class="slot {{empty ? 'empty' : ''}}">
+        <slot></slot>
+    </view>
+</view>

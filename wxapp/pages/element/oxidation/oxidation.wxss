@@ -1,0 +1,25 @@
+.oxidation {
+  display: flex;
+  flex-direction: column; }
+  .oxidation .line {
+    display: flex;
+    flex-direction: row; }
+    .oxidation .line:first-child {
+      margin-bottom: 4px; }
+    .oxidation .line .cir {
+      width: 22px;
+      height: 22px;
+      background: #2e2e3a;
+      color: var(--fg);
+      border-radius: 50%;
+      line-height: 22px;
+      font-size: 10px;
+      text-align: center;
+      color: #ffffff;
+      margin-right: 4px; }
+    .oxidation .line .cir1.active {
+      background: #1565C0; }
+      .oxidation .line .cir1.active:first-child {
+        background: #0288D1; }
+    .oxidation .line .cir2.active {
+      background: #C62828; }

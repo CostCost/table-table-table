@@ -1,0 +1,14 @@
+<!-- pages/index/pt-item/pt-item.wxml -->
+<view class="pt-item {{deactive ? 'deactive' : ''}}" hover-class="{{group ? '' : 'hover'}}">
+  <block wx:if="{{group}}">
+    <view class="number-group"><text>{{number}}</text></view>
+    <view class="symbol-group">{{leftSymbol}}-{{rightSymbol}}</view>
+  </block>
+  <block wx:else>
+    <view class="number"><text>{{number}}</text></view>
+    <view class="symbol">{{symbol}}</view>
+    <view class="name">{{name}}</view>
+    <view class="color"><view class="color-view" style="background:{{color}};width:100%;height:100%;border-radius: 2px;"></view></view>
+    <view wx:if="{{radioactive}}" class="radioactive"/>
+  </block>
+</view>

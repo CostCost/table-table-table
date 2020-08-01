@@ -1,0 +1,24 @@
+<view class="page" data-theme="dark">
+    <view class="top-bar">
+        <view class="left">
+            <input class="input" placeholder="搜索" confirm-type="search" value="{{keyword}}" bindinput="onInput"/>
+        </view>
+        <view class="right" bindtap="clearKeyword">
+            <iconfont wx:if="{{keyword}}" name="icon-ic_close_dr" color="{{_isDark ? '#ffffff' : '#000000'}}" size="{{22}}"></iconfont>
+        </view>
+    </view>
+    <scroll-view class="scroll-view" scroll-y="{{true}}" style="top:{{scrollViewTop}}px;" enable-back-to-top="{{true}}">
+        <view>
+            <list-item wx:for="{{list}}" wx:key="number" wx:if="{{item.show}}" url="{{item.isotiosCnt > 0 ? '/pages/isotops-detail/isotops-detail?number='+item.number : ''}}">
+                <view slot="icon" class="logo" style="background:{{item.cat_color}};color:{{item.cat == 'L' ? '#000000' : '#ffffff'}}"><text class="logo-text">{{item.symbol}}</text></view>
+                <view class="search-item">
+                    <view class="name">{{item.name}}</view>
+                    <view class="param">{{item.atomic_weight}} (g/mol)</view>
+                </view>
+                <view slot="right" class="cnt-group">
+                    <view class="cnt" style="background:{{item.cat_color}};">{{item.isotiosCnt}}</view>
+                </view>
+            </list-item>
+        </view>
+    </scroll-view>
+</view>

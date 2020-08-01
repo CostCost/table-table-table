@@ -1,0 +1,169 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": true,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.11.0",
+	"appid": "______",
+	"projectname": "%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/element/element",
+					"pathName": "pages/element/element",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/listing/listing",
+					"pathName": "pages/listing/listing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/other/other",
+					"pathName": "pages/other/other",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/about/about",
+					"pathName": "pages/about/about",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packages/tables/pages/solubility/solubility",
+					"pathName": "packages/tables/pages/solubility/solubility",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packages/tables/pages/dipole-moments/dipole-moments",
+					"pathName": "packages/tables/pages/dipole-moments/dipole-moments",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packages/tables/pages/color-changes/color-changes",
+					"pathName": "packages/tables/pages/color-changes/color-changes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packages/tools/pages/counter/counter",
+					"pathName": "packages/tools/pages/counter/counter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packages/tables/pages/dipole-moments/dipole-moments",
+					"pathName": "packages/tables/pages/dipole-moments/dipole-moments",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admire/admire",
+					"pathName": "pages/admire/admire",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "packages/enjoys/pages/character/character",
+					"pathName": "packages/enjoys/pages/character/character",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/about/about",
+					"pathName": "pages/about/about",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": -1,
+					"name": "pages/isotops/isotops",
+					"pathName": "pages/isotops/isotops",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/isotops-detail/isotops-detail",
+					"pathName": "pages/isotops-detail/isotops-detail",
+					"scene": null
+				}
+			]
+		}
+	}
+}

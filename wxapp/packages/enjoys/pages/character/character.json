@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "化学常识趣味问答",
+  "usingComponents": {
+    "poster": "../miniprogram_dist/poster"
+  }
+}

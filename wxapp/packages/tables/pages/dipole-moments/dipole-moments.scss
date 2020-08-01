@@ -1,0 +1,28 @@
+.page{
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: start;
+    // align-items: flex-start;
+    font-size: 0;
+    .col{
+        display: inline-flex;
+        width: 50%;
+        height: 120px;
+        border-bottom: 1px solid;
+        border-color: red;
+        background: linear-gradient(var(--bg), var(--pg));
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .value{
+            font-size: 32px;
+            font-weight: 300;
+        }
+        .name{
+            display: block;
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+}

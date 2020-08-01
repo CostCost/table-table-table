@@ -1,0 +1,9 @@
+<view class="cell-list">
+    <view class="cell-header" wx:if="{{showHeader}}">
+        <iconfont class="icon" name="{{headerIcon}}" color="{{_isDark ? '#ffffff' : '#00000'}}" size="{{22}}"></iconfont>
+        <view class="text"><text>{{headerText}}</text></view>
+    </view>
+    <view class="cell-content">
+        <slot></slot>
+    </view>
+</view>

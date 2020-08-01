@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/**app.wxss**/
+page {
+  background: var(--bg); }
+
+.page {
+  background: var(--bg);
+  color: var(--fg);
+  min-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative; }
+
+.deg-c {
+  color: #1565C0; }
+
+.deg-f {
+  color: #FF8F00; }
+
+.def-k {
+  color: #2E7D32; }
+
+[data-theme=dark] {
+  /* 主背景 */
+  --bg: #1c1f26;
+  --bg-0: #20252b;
+  /* 次背景 */
+  --bg-1: #31343d;
+  --bg-3: #3d3e42;
+  /* 突出背景 */
+  --pg: #16191e;
+  /* font色 */
+  --fg: #ffffff;
+  --fg-0: rgba(255,255,255,0.8);
+  --fg-1: rgba(255,255,255,0.6);
+  --fg-2: rgba(255,255,255,0.4);
+  --fg-3: rgba(255,255,255,0.07);
+  --tg: #F2B42A;
+  --ele-dis-color: #6f7887; }
+
+[data-theme=light] {
+  /* 主背景 */
+  --bg: #ffffff;
+  --bg-0: #fdfdfd;
+  /* 次背景 */
+  --bg-1: #ebebeb;
+  --bg-3: #dbdbdb;
+  /* 突出背景 */
+  --pg: #aaaaaa;
+  /* font色 */
+  --fg: #000000;
+  --fg-0: rgba(0,0,0,0.8);
+  --fg-1: rgba(0,0,0,0.6);
+  --fg-2: rgba(0,0,0,0.4);
+  --fg-3: rgba(0,0,0,0.07);
+  --tg: #F2B42A;
+  --ele-dis-color: #6f7887; }

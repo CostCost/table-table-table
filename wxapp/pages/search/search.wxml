@@ -1,0 +1,22 @@
+<view class="page" data-theme="dark">
+    <view class="top-bar">
+        <view class="left">
+            <input class="input" placeholder="搜索{{(!_type && '所有元素') || (_type == 'name' && '元素名称') ||(_type == 'symbol' && '元素符号') || (_type == 'number' && '原子序数') || (_type == 'year' && '发现年份') || (_type == 'atomic_weight' && '原子量') || (_type == 'density' && '密度') || (_type == 'electrical_conductivity' && '电导率') || (_type == 'cas' && ' CAS 编号') || (_type == 'electronegtivity' && '电负性') || (_type == 'atomic_radius' && '原子半径') || (_type == 'electrons' && '电子数量')}}" confirm-type="search" bindinput="onInput"/>
+        </view>
+        <view class="right" bindtap="showFilterDialog">
+            <iconfont name="icon-ic_filter_toolbar" color="{{_isDark ? '#ffffff' : '#000000'}}" size="{{22}}"></iconfont>
+        </view>
+    </view>
+    <scroll-view class="scroll-view" scroll-y="{{true}}" style="top:{{scrollViewTop}}px;" enable-back-to-top="{{true}}">
+        <view>
+            <list-item wx:for="{{list}}" wx:key="number" wx:if="{{item.show}}" url="/pages/element/element?number={{item.number}}">
+                <view slot="icon" class="logo" style="background:{{item.cat_color}};color:{{item.cat == 'L' ? '#000000' : '#ffffff'}}"><text class="logo-text">{{item.symbol}}</text></view>
+                <view class="search-item">
+                    <view class="name">{{item.name}}</view>
+                    <view class="param">{{item.atomic_weight}} (g/mol)</view>
+                </view>
+            </list-item>
+        </view>
+    </scroll-view>
+    <filter-dialog wx:if="{{isShowFilterDialog}}" bindclose="closeFilterDialog" bindtype="onTypeChange"></filter-dialog>
+</view>

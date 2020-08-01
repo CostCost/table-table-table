@@ -1,0 +1,69 @@
+<view class="page" data-theme="dark">
+    <view class="main">
+        <view class="scroll">
+            <view class="scroll-content" data-type="" bindtap="typeChange">
+                <view class="left">
+                    <view class="name"></view>
+                    <rich-text class="name" wx:for="{{14}}" nodes="{{nameData.col[index]}}"></rich-text>
+                </view>
+                <view class="right">
+                    <view class="top">
+                        <rich-text class="name" wx:for="{{23}}" nodes="{{nameData.row[index]}}"></rich-text>
+                    </view>
+                    <view class="content">
+                        <view class="row" wx:for="{{14}}" wx:for-index="row">
+                            <view wx:for="{{23}}" wx:for-index="col" class="col {{util.class(tableData[23 * row + col])}} {{util.disable(tableData[23 * row + col], type)}}">
+                                {{util.name(tableData[23 * row + col])}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="toolbar">
+        <view class="tool">
+            <view class="col status-can">可</view>
+            <view class="btn" hover-class="btn-hover" data-type="1" bindtap="typeChange">可溶于水</view>
+        </view>
+        <view class="tool">
+            <view class="col status-no">不</view>
+            <view class="btn" hover-class="btn-hover" data-type="0" bindtap="typeChange">不溶于水</view>
+        </view>
+        <view class="tool">
+            <view class="col status-lite">微</view>
+            <view class="btn" hover-class="btn-hover" data-type="2" bindtap="typeChange">微溶于水</view>
+        </view>
+        <view class="tool">
+            <view class="col status-swift">-</view>
+            <view class="btn" hover-class="btn-hover" data-type="-" bindtap="typeChange">遇水分解</view>
+        </view>
+    </view>
+</view>
+<wxs module="util">
+    module.exports = {
+        name: function(t){
+            if(t == '1') return '可';
+            if(t == '2') return '微';
+            if(t == '0') return '不';
+            if(t == '-') return '-';
+            return '*';
+        }
+        class: function(t){
+            if(t == '1') return 'status-can';
+            if(t == '2') return 'status-lite';
+            if(t == '0') return 'status-no';
+            if(t == '-') return 'status-swift';
+            return 'status-null';
+        },
+        disable: function(colType, type){
+            if(type == '' || type == null || colType == '*'){
+                return '';
+            }
+            if(type != colType){
+                return 'disable';
+            }
+            return '';
+        }
+    }
+</wxs>

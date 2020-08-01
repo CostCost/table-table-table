@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "名单",
+  "usingComponents": {
+    "list-item": "../../components/list-item/list-item",
+    "drop-menu": "../../components/drop-menu/drop-menu",
+    "drop-menu-item": "../../components/drop-menu-item/drop-menu-item",
+    "pt-item": "../index/pt-item/pt-item"
+  }
+}

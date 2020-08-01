@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/element/element",
+    "pages/search/search",
+    "pages/listing/listing",
+    "pages/other/other",
+    "pages/about/about",
+    "pages/admire/admire",
+    "pages/isotops/isotops",
+    "pages/isotops-detail/isotops-detail"
+  ],
+  "subpackages": [
+    {
+      "root": "packages/tables",
+      "pages": [
+        "pages/solubility/solubility",
+        "pages/color-changes/color-changes",
+        "pages/dipole-moments/dipole-moments"
+      ]
+    },
+    {
+      "root": "packages/tools",
+      "pages": [
+        "pages/counter/counter"
+      ]
+    },
+    {
+      "root": "packages/enjoys",
+      "pages": [
+        "pages/character/character"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#31343d",
+    "navigationBarTitleText": "元素周期表",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1c1f26",
+    "pageOrientation": "auto"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "iconfont": "components/iconfont/iconfont"
+  },
+  "tabBar": {
+    "backgroundColor": "#31343d",
+    "color": "#b9b9b9",
+    "selectedColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "周期表",
+        "iconPath": "assets/ic_tab1_1.png",
+        "selectedIconPath": "assets/ic_tab1.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "assets/ic_tab2_1.png",
+        "selectedIconPath": "assets/ic_tab2.png"
+      },
+      {
+        "pagePath": "pages/listing/listing",
+        "text": "名单",
+        "iconPath": "assets/ic_tab3_1.png",
+        "selectedIconPath": "assets/ic_tab3.png"
+      },
+      {
+        "pagePath": "pages/isotops/isotops",
+        "text": "同位素",
+        "iconPath": "assets/ic_tab4_1.png",
+        "selectedIconPath": "assets/ic_tab4.png"
+      },
+      {
+        "pagePath": "pages/other/other",
+        "text": "其他",
+        "iconPath": "assets/ic_tab5_1.png",
+        "selectedIconPath": "assets/ic_tab5.png"
+      }
+    ]
+  }
+}

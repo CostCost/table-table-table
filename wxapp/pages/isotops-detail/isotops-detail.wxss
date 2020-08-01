@@ -1,0 +1,31 @@
+.page .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .page .item .left {
+    display: flex;
+    width: 72px;
+    height: 64px;
+    justify-content: center;
+    align-items: center; }
+    .page .item .left .logo {
+      width: 44px;
+      height: 44px;
+      background: #eeeeee;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  .page .item .content {
+    flex: 1;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .page .item .content .text-item {
+      font-size: 15px;
+      line-height: 21px; }
+      .page .item .content .text-item.disable {
+        color: var(--fg-2); }
+
+.page .item + .item {
+  border-top: 1px solid var(--fg-3); }

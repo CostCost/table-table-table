@@ -1,0 +1,27 @@
+<view class="page" data-theme="dark">
+    <drop-menu bindselected="onDropSelect">
+        <view slot="content" class="top-bar" hover-class="top-bar-hover">
+            <view class="left">
+                <view class="colorc" style="background:{{bgColor}};"></view>
+                <view>{{name}}</view>
+            </view>
+            <view class="right" bindtap="showFilterDialog">
+                <iconfont name="icon-ic_spinner_caret" color="{{_isDark ? '#ffffff' : '#000000'}}" size="{{22}}"></iconfont>
+            </view>
+        </view>
+        <drop-menu-item wx:for="{{options}}" wx:key="type" value="{{item.type}}">
+            <view class="drop-menu-item">
+                <view class="colorc-l" style="background:{{item.color}};"></view><text>{{item.name}}</text>
+            </view>
+        </drop-menu-item>
+    </drop-menu>
+    <scroll-view class="scroll-view" scroll-y="{{true}}" style="top:{{scrollViewTop}}px;" enable-back-to-top="{{true}}">
+        <list-item wx:for="{{list}}" wx:key="number" url="/pages/element/element?number={{item.number}}">
+            <view slot="icon" class="icon">
+                <pt-item number="{{item.number}}"></pt-item>
+            </view>
+            <view slot="bg" class="progress" style="width:{{item.progress}}%;background:{{bgColor}};"></view>
+            <view class="text">{{item[type] || 0}} {{unit}}</view>
+        </list-item>
+    </scroll-view>
+</view>

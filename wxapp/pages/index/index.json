@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "pt-item": "./pt-item/pt-item",
+    "cat-dialog": "./cat-dialog/cat-dialog"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "其他",
+  "usingComponents": {
+    "list-item": "../../components/list-item/list-item",
+    "alet": "../../components/alet/alet"
+  }
+}

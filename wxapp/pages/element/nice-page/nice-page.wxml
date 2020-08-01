@@ -1,0 +1,10 @@
+<view class="nav" style="padding-top:{{statusBarHeight}}px;height:{{navHeight}}px;">
+    <view class="bg" style="background:{{background}};opacity:{{opacity}};"></view>
+    <view class="left">
+        <view class="weui-navigation-bar__btn_goback"></view>
+        <slot name="left"></slot>
+    </view>
+    <view class="right" style="margin-right:{{navPaddingRight}}px;">
+        <slot name="right"></slot>
+    </view>
+</view>

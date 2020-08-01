@@ -1,0 +1,43 @@
+<view class="page" data-theme="dark">
+    <view class="content">
+        <scroll-view class="scroll-view" scroll-y="{{true}}" scroll-with-animation="{{true}}" scroll-into-view="{{intoViewId}}">
+            <view class="msg-list">
+                <block wx:for="{{msgList}}" wx:key="index">
+                    <block wx:if="{{item.self}}">
+                        <view class="mark" wx:if="{{item.mark}}">{{item.mark}}</view>
+                        <view class="msg self" id="msgItem{{index}}">
+                            <view class="msg-item">
+                                <image wx:if="{{item.image}}" src="{{item.image}}" class="msg-item-image" style="width:{{item.width}}px;width:{{item.height}}px;"></image>
+                                <block wx:else>{{item.text}}</block>
+                            </view>
+                            <view class="icon"><image src="{{userInfo ? userInfo.avatarUrl : ''}}" class="image" /></view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="mark" wx:if="{{item.mark}}">{{item.mark}}</view>
+                        <view class="msg" id="msgItem{{index}}">
+                            <view class="icon"><image src="/assets/logo.png" class="image" /></view>
+                            <view class="msg-item">
+                                <image wx:if="{{item.image}}" src="{{item.image}}" class="msg-item-image" style="width:{{item.width}}px;height:{{item.height}}px;" data-image="{{item.image}}" bindtap="onImageClick"></image>
+                                <block wx:else>{{item.text}}</block>
+                                <button class="button {{item.disable ? 'disable' : ''}}" hover-class="button-hover" disabled="{{item.disable}}" wx:if="{{item.button.text}}" bindtap="buttonClicked" bindgetuserinfo="buttonUserInfo" data-tag="{{item.id}}" open-type="{{item.button.type}}">{{item.button.text}}</button>
+                            </view>
+                        </view>
+                    </block>
+                </block>
+            </view>
+            <view class="answer-list" wx:if="{{options}}">
+                <view class="answer" hover-class="answer-hover" wx:for="{{options}}" wx:key="index" bindtap="onAnswerItemClick" data-index="{{index}}">{{item}}</view>
+            </view>
+            <view id="bottomView" style="width:100px;height:2px;"></view>
+        </scroll-view>
+    </view>
+    <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+    </poster>
+    <!-- <view class="footer" bindtap="add">
+        <view></view>
+        <view></view>
+        <view></view>
+    </view> -->
+    <!-- <wxml-to-canvas class="canvas" width="{{1000}}" height="{{707}}"></wxml-to-canvas> -->
+</view>

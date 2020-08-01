@@ -1,0 +1,22 @@
+<view class="page" data-theme="dark">
+    <view class="logo">
+        <image class="image" src="/assets/logo.png" mode="aspectFit"></image>
+        <view class="name">您可以通过以下方式支持「元素周期表 专业版」</view>
+    </view>
+    <view class="header">
+        <view class="icon"><iconfont name="icon-fenxiang" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">分享</view>
+    </view>
+    <view class="content">
+        <view class="desc">将「元素周期表 专业版」分享给需要的人。</view>
+        <button open-type="share" class="share-btn">分享给需要的人</button>
+    </view>
+    <view class="header">
+        <view class="icon"><iconfont name="icon-ic_about_like" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">赞赏</view>
+    </view>
+    <view class="content">
+        <view class="desc">点击图片，长按识别图中的赞赏码，给开发者赞赏 (您的名字将在「谁帮助了我们」中展示)。</view>
+        <image bindtap="clickImage" class="image" mode="aspectFit" src="/assets/admire.jpg"></image>
+    </view>
+</view>

@@ -1,0 +1,49 @@
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.76);
+  z-index: 200000;
+  animation: show 0.2s; }
+
+.shell-alert {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200001;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .shell-alert .content {
+    padding-left: 74rpx;
+    padding-right: 74rpx;
+    font-size: 14px; }
+    .shell-alert .content .image-group {
+      width: 100%; }
+      .shell-alert .content .image-group .image {
+        width: 100%;
+        height: 420rpx; }
+    .shell-alert .content .text-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      color: #ffffff;
+      padding-left: 20px;
+      padding-right: 20px; }
+      .shell-alert .content .text-group .left {
+        flex: 1;
+        border-right: 1px solid #ffffff;
+        padding-right: 14px; }
+      .shell-alert .content .text-group .right {
+        padding-left: 14px;
+        padding-right: 14px; }
+    .shell-alert .content .hr {
+      width: 100%;
+      border-bottom: 1px solid #ffffff; }

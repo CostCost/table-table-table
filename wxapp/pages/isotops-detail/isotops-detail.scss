@@ -1,0 +1,39 @@
+.page{
+    .item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .left{
+            display: flex;
+            width: 72px;
+            height: 64px;
+            justify-content: center;
+            align-items: center;
+            .logo{
+                width: 44px;
+                height: 44px;
+                background: #eeeeee;
+                border-radius: 50%;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .content{
+            flex: 1;
+            .text-item{
+                font-size: 15px;
+                line-height: 21px;
+                &.disable{
+                    color: var(--fg-2);
+                }
+            }
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    .item + .item{
+        border-top: 1px solid var(--fg-3);
+    }
+}

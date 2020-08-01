@@ -1,0 +1,26 @@
+<view wx:if="{{realShow}}" class="adlet">
+    <view class="bgt bgt1">Hello</view>
+    <view class="bgt bgt2">您好</view>
+    <block wx:if="{{step == '0'}}">
+        <view class="text">您喜欢我们的应用吗？</view>
+        <view class="btns">
+            <button class="btn cancel" data-step="1" bindtap="changeStep">不喜欢</button>
+            <button class="btn ok" data-step="2" bindtap="changeStep">喜欢</button>
+        </view>
+    </block>
+    <block wx:if="{{step == '1'}}">
+        <view class="text">只占用您30秒的时间，反馈一点问题给我们怎样？</view>
+        <view class="btns">
+            <button class="btn cancel" open-type="feedback" data-step="3" bindtap="changeStep">反馈问题</button>
+        </view>
+    </block>
+    <block wx:if="{{step == '2'}}">
+        <view class="text">只占用您10秒的时间，帮我们转发一下如何？</view>
+        <view class="btns">
+            <button class="btn ok" open-type="share" data-step="3" bindtap="changeStep">转发给好友</button>
+        </view>
+    </block>
+    <block wx:if="{{step == '3'}}">
+        <view class="text">谢谢！</view>
+    </block>
+</view>

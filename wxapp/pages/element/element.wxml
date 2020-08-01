@@ -1,0 +1,485 @@
+<nice-page background="{{_isDark ? '#31343d' : '#31343d'}}" opacity="{{navOpacity}}">
+    <view slot="left">
+        <iconfont wx:if="{{isFirstPage}}" bindtap="onBackClick" name="icon-home" color="#fff" size="{{20}}"></iconfont>
+        <iconfont wx:else bindtap="onBackClick" name="icon-fanhui" color="#fff" size="{{17}}"></iconfont>
+    </view>
+    <!-- wiki按钮暂不实现 -->
+    <!-- <view slot="right">
+        <iconfont name="icon-ic_wikipedia" color="#fff" size="{{22}}"></iconfont>
+    </view> -->
+</nice-page>
+<view class="page" data-theme="{{_isDark ? 'dark' : 'light'}}">
+    <view class="nav">
+        <image class="image" mode="aspectFill" src="{{eleImage}}" style="background:{{catColor}};"></image>
+        <view class="image-mask"></view>
+        <view class="content">
+            <view><view class="tag" wx:if="{{detail.base.radioactive == '+'}}">放射性</view></view>
+            <view><view class="tag" style="background:{{catColor}};">{{detail.id}} <view class="cut"/> {{catName}}</view></view>
+            <view class="info">
+                <view class="left"><text class="text">{{detail.base.symbol}}</text></view>
+                <view class="right">
+                    <view class="top"><text class="text">{{detail.base.name}} <block wx:if="{{detail.base.pinyin}}">({{detail.base.pinyin}})</block></text></view>
+                    <view class="bottom"><text class="text">{{detail.props.atomic_weight}} g/mol</text></view>
+                </view>
+            </view>
+            <view class="preview-image" bindtap="onPreviewImage">
+                <iconfont name="icon-screenfull" color="#ffffff" size="{{24}}"></iconfont>
+            </view>
+        </view>
+        <view class="cat-color" style="background:{{catColor}};"></view>
+    </view>
+    <view class="paging">
+        <view class="paging-btn" hover-class="{{paging.prev ? 'paging-hover' : ''}}" 
+            data-number="{{paging.prev && paging.prev.number}}" 
+            bindtap="onChangeElement">
+            <block wx:if="{{paging.prev}}">
+                <iconfont class="icon" name="icon-arrow_to_left" color="{{_isDark ? '#ffffff' : '#00000'}}" size="{{20}}"></iconfont>
+                <view class="text"><text>{{paging.prev.number}} · {{paging.prev.name}}</text></view>
+            </block>
+        </view>
+        <view class="paging-btn" hover-class="{{paging.next ? 'paging-hover' : ''}}" 
+            data-number="{{paging.next && paging.next.number}}" 
+            bindtap="onChangeElement">
+            <block wx:if="{{paging.next}}">
+                <view class="text"><text>{{paging.next.name}} · {{paging.next.number}}</text></view>
+                <iconfont class="icon" name="icon-arrow_to_right" color="{{_isDark ? '#ffffff' : '#00000'}}" size="{{20}}"></iconfont>
+            </block>
+        </view>
+        <view class="paging-cut"></view>
+        <view class="paging-square" style="background:{{catColor}};"></view>
+    </view>
+    <seed-invite></seed-invite>
+    <!-- 概述 -->
+    <cell-list header-text="概述" header-icon="icon-read1_atom">
+        <cell empty="{{!detail.base.la_name}}">
+            <view>拉丁语名:</view>
+            <cell-content>{{detail.base.la_name}}</cell-content>
+        </cell>
+        <cell empty="{{!detail.base.en_name}}">
+            <view>英文名:</view>
+            <cell-content>{{detail.base.en_name}}</cell-content>
+        </cell>
+        <cell empty="{{!discoveredYear}}">
+            <view>发现年份:</view>
+            <cell-content>{{discoveredYear}}</cell-content>
+        </cell>
+        <cell empty="{{!discoveredBys || discoveredBys.length <= 0}}">
+            <view>发现者:</view>
+            <cell-content>
+                <view wx:for="{{discoveredBys}}" wx:key="index">{{item}}</view>
+            </cell-content>
+        </cell>
+        <cell full="{{true}}" paddingV="0" empty="{{!electronShellText}}" clickable="{{true}}" bindtap="showShellAlert">
+            <view class="ele-shell">
+                <view class="left">
+                    <view>电子层:</view>
+                    <cell-content>{{electronShellText}}</cell-content>
+                </view>
+                <view class="right">
+                    <image class="image" mode="aspectFit" src="{{eleShellImage}}"/>
+                </view>
+            </view>
+        </cell>
+        <cell clear="{{true}}">
+            <view class="ele-count">
+                <view class="ele-count-item">
+                    <view class="name">电子:</view>
+                    <view class="count">{{detail.overview.electrons || '-'}}</view>
+                </view>
+                <view class="ele-count-item">
+                    <view class="name">质子:</view>
+                    <view class="count">{{detail.id || '-'}}</view>
+                </view>
+                <view class="ele-count-item">
+                    <view class="name">中子:</view>
+                    <view class="count">{{detail.overview.neutrons || '-'}}</view>
+                </view>
+            </view>
+        </cell>
+    </cell-list>
+    <!-- 注意 -->
+    <cell-list header-text="注意" header-icon="icon-ic_note">
+        <cell full="{{true}}" empty="{{!summary}}">
+            <cell-content custom-style="padding-right:14px;">{{summary}}</cell-content>
+        </cell>
+    </cell-list>
+    <!-- 性质 -->
+    <cell-list header-text="性质" header-icon="icon-read2_temp">
+        <cell empty="{{!detail.id}}">
+            <view>原子序数:</view>
+            <cell-content>{{detail.id}}</cell-content>
+        </cell>
+        <cell empty="{{detail.props.atomic_weight == ''}}">
+            <view>原子量（相对原子质量）:</view>
+            <cell-content>{{detail.props.atomic_weight}} (g/mol)</cell-content>
+        </cell>
+        <cell empty="{{detail.props.density == ''}}">
+            <view>密度:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.props.density}} (g/cm<sup><small>3</small></sup>)"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{!meltingPoint}}">
+            <view>熔点:</view>
+            <cell-content>
+                {{meltingPoint.c}} <span class="deg-c">℃</span> = {{meltingPoint.f}} <span class="deg-f">℉</span> = {{meltingPoint.k}} <span class="def-k">K</span>
+            </cell-content>
+        </cell>
+        <cell empty="{{!boilingPoint}}">
+            <view>熔点:</view>
+            <cell-content>
+                {{boilingPoint.c}} <span class="deg-c">℃</span> = {{boilingPoint.f}} <span class="deg-f">℉</span> = {{boilingPoint.k}} <span class="def-k">K</span>
+            </cell-content>
+        </cell>
+        <cell empty="{{!valenceElectrons}}">
+            <view>化合价:</view>
+            <cell-content>{{valenceElectrons}}</cell-content>
+        </cell>
+        <cell empty="{{period == ''}}">
+            <view>周期:</view>
+            <cell-content>{{period}}</cell-content>
+        </cell>
+        <cell empty="{{family == ''}}">
+            <view>族:</view>
+            <cell-content>{{family}}</cell-content>
+        </cell>
+        <cell empty="{{detail.props.block == ''}}">
+            <view>区:</view>
+            <cell-content>{{detail.props.block}} - 区</cell-content>
+        </cell>
+        <cell>
+            <view>发射光谱:</view>
+            <view bindtap="onPreviewLight">
+                <image mode="scaleToFill" src="{{lightImage}}" style="background:#000000;width:100%;height:28px;margin-top: 6px;" />
+            </view>
+        </cell>
+    </cell-list>
+    <!-- 热力学性质 -->
+    <cell-list header-text="热力学性质" header-icon="icon-ts0">
+        <cell empty="{{detail.therm.phase == ''}}">
+            <view class="phase-group">
+                <view class="left">
+                    <view>物态（常温）:</view>
+                    <cell-content>{{detail.therm.phase == '0' && '气态' || detail.therm.phase == '1' && '固态' || detail.therm.phase == '2' && '液态' || '-'}}</cell-content>
+                </view>
+                <view class="right" wx:if="{{detail.therm.phase != ''}}">
+                    <iconfont wx:if="{{detail.therm.phase == '0'}}" name="icon-ts2" size="{{18}}" color="#FFFFFF"></iconfont>
+                    <iconfont wx:if="{{detail.therm.phase == '1'}}" name="icon-ts0" size="{{18}}" color="#2E7D32"></iconfont>
+                    <iconfont wx:if="{{detail.therm.phase == '2'}}" name="icon-ts3" size="{{18}}" color="#1565C0"></iconfont>
+                </view>
+            </view>
+        </cell>
+        <cell empty="{{detail.therm.fusion_heat == ''}}">
+            <view>熔化替热:</view>
+            <cell-content>{{detail.therm.fusion_heat}} (kJ · mol)</cell-content>
+        </cell>
+        <cell empty="{{detail.therm.specific_hea == ''}}">
+            <view>比热容:</view>
+            <cell-content>{{detail.therm.specific_hea}} (J/kg · K)</cell-content>
+        </cell>
+        <cell empty="{{detail.therm.thermal_expansion == ''}}">
+            <view>膨胀系数:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.therm.thermal_expansion}} <span class='deg-c'>℃</span><sup><small>-1</small></sup>"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.therm.vaporization_heat == ''}}">
+            <view>汽化替热:</view>
+            <cell-content>{{detail.therm.vaporization_heat}} (kJ · mol)</cell-content>
+        </cell>
+    </cell-list>
+    <!-- 原子性质 -->
+    <cell-list header-text="原子性质" header-icon="icon-read8_atom">
+        <cell empty="{{!electronConfig || electronConfig.length <= 0}}">
+            <view>电子排布:</view>
+            <cell-content>
+                <rich-text wx:for="{{electronConfig}}" wx:key="index" nodes="{{item}}"></rich-text>
+            </cell-content>
+        </cell>
+        <cell>
+            <view style="margin-bottom: 6px;">氧化（还原）态:</view>
+            <oxidation value="{{detail.atomic.oxidation_state}}"></oxidation>
+        </cell>
+        <cell empty="{{!ionCharge}}">
+            <view>离子电荷量:</view>
+            <cell-content>
+                <rich-text nodes="{{ionCharge}}"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.atomic.ionization_potential == ''}}">
+            <view>原子的电离势:</view>
+            <cell-content>{{detail.atomic.ionization_potential}} (eV)</cell-content>
+        </cell>
+        <cell empty="{{detail.atomic.atomic_radius == ''}}">
+            <view>原子半径:</view>
+            <cell-content>{{detail.atomic.atomic_radius}} (pm)</cell-content>
+        </cell>
+        <cell empty="{{detail.atomic.covalent_radius == ''}}">
+            <view>共价半径:</view>
+            <cell-content>{{detail.atomic.covalent_radius}} (pm)</cell-content>
+        </cell>
+        <cell empty="{{detail.atomic.van_der_waals_radius == ''}}">
+            <view>范德华半径:</view>
+            <cell-content>{{detail.atomic.van_der_waals_radius}} (pm)</cell-content>
+        </cell>
+    </cell-list>
+    <!-- 电磁性质 -->
+    <cell-list header-text="电磁性质" header-icon="icon-read5_manet">
+        <cell empty="{{detail.electrom.electrical_conductivity == ''}}">
+            <view>电导率:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.electrom.electrical_conductivity}} (S/m)"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.electrom.electrical_type == ''}}">
+            <view>导电性:</view>
+            <cell-content>{{(detail.electrom.electrical_type == '1' && '导体') || (detail.electrom.electrical_type == '2' && '电介体') || (detail.electrom.electrical_type == '1' && '半导体')}}</cell-content>
+        </cell>
+        <cell empty="{{detail.electrom.magnetic_type == ''}}">
+            <view>磁性:</view>
+            <cell-content>{{(detail.electrom.magnetic_type == '1' && '抗磁性') || (detail.electrom.magnetic_type == '2' && '顺磁性') || (detail.electrom.magnetic_type == '3' && '反铁磁性') || detail.electrom.magnetic_type == '3' && '铁磁性'}}</cell-content>
+        </cell>
+        <cell empty="{{detail.electrom.volume_magnetic == ''}}">
+            <view>体积磁化率:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.electrom.volume_magnetic}}"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.electrom.mass_magnetic == ''}}">
+            <view>质量磁化率:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.electrom.mass_magnetic}}"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.electrom.molar_magnetic == ''}}">
+            <view>摩尔磁化率:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.electrom.molar_magnetic}} (m³/mol)"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.electrom.resistivity == ''}}">
+            <view>电阻率:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.electrom.resistivity}} (mΩ)"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{!superconductingPoint || superconductingPoint.length == 0}}">
+            <view>超导点:</view>
+            <cell-content>{{superconductingPoint.c}} <span class="deg-c">℃</span> = {{superconductingPoint.f}} <span class="deg-f">℉</span> = {{superconductingPoint.k}} <span class="def-k">K</span></cell-content>
+        </cell>
+    </cell-list>
+    <!-- 晶体性质 -->
+    <cell-list header-text="晶体性质" header-icon="icon-read11_resh">
+        <view class="struct-group">
+            <view class="left">
+                <cell empty="{{!crystalStructure}}">
+                    <view>晶体结构:</view>
+                    <cell-content>{{crystalStructure}}</cell-content>
+                </cell>
+                <cell empty="{{detail.grid.grid_parameters == ''}}">
+                    <view>晶格常数:</view>
+                    <cell-content>
+                        <rich-text nodes="{{detail.grid.grid_parameters}}"></rich-text>
+                    </cell-content>
+                </cell>
+                <cell empty="{{detail.grid.attitude_ca == ''}}">
+                    <view>轴比 c/a:</view>
+                    <cell-content>
+                        <view>{{detail.grid.attitude_ca}}</view>
+                    </cell-content>
+                </cell>
+            </view>
+            <view class="right" wx:if="{{structImage}}">
+                <image class="image" mode="aspectFit" src="{{structImage}}"/>
+            </view>
+        </view>
+        <cell empty="{{!debyeTemperature}}">
+            <view>德拜温度:</view>
+            <cell-content>{{debyeTemperature.c}} <span class="deg-c">℃</span> = {{debyeTemperature.f}} <span class="deg-f">℉</span> = {{debyeTemperature.k}} <span class="def-k">K</span></cell-content>
+        </cell>
+        <cell empty="{{detail.grid.space_name == ''}}">
+            <view>空间群名称:</view>
+            <cell-content>
+                <rich-text nodes="{{detail.grid.space_name}}"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.grid.space_number == ''}}">
+            <view>空间群编号:</view>
+            <cell-content>{{detail.grid.space_number}}</cell-content>
+        </cell>
+    </cell-list>
+    <!-- 其他信息 -->
+    <cell-list header-text="其他信息" header-icon="icon-read4_color">
+        <cell>
+            <view>颜色:</view>
+            <view class="other-info-color" style="background:{{eleColor ? eleColor : 'rgba(0,0,0,0)'}};"></view>
+        </cell>
+        <cell empty="{{detail.addition.cas_number == ''}}">
+            <view>CAS编号:</view>
+            <cell-content>{{detail.addition.cas_number}}</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.cid_number == ''}}">
+            <view>CID编号:</view>
+            <cell-content>{{detail.addition.cid_number}}</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.rtec_number == ''}}">
+            <view>RTEC编号:</view>
+            <cell-content>{{detail.addition.rtec_number}}</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.brinell_hardness == ''}}">
+            <view>布氏硬度:</view>
+            <cell-content>{{detail.addition.brinell_hardness}} (MPa)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.mohs_hardness == ''}}">
+            <view>莫氏硬度:</view>
+            <cell-content>{{detail.addition.mohs_hardness}}</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.vickers_hardness == ''}}">
+            <view>维氏硬度:</view>
+            <cell-content>{{detail.addition.vickers_hardness}}</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.bulk_modulus == ''}}">
+            <view>体积模量:</view>
+            <cell-content>{{detail.addition.bulk_modulus}} (GPa)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.youngs_modulus == ''}}">
+            <view>杨氏模量:</view>
+            <cell-content>{{detail.addition.youngs_modulus}} (GPa)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.liquid_density == ''}}">
+            <view>液体密度:</view>
+            <cell-content>{{detail.addition.liquid_density}} (g/cm³)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.molar_volume == ''}}">
+            <view>摩尔体积:</view>
+            <cell-content>{{detail.addition.molar_volume}} (cm³/mol)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.poissons_ratio == ''}}">
+            <view>泊松比:</view>
+            <cell-content>{{detail.addition.poissons_ratio}} (μ)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.shear_modulus == ''}}">
+            <view>剪切模量:</view>
+            <cell-content>{{detail.addition.shear_modulus}} (GPa)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.sound_speed == ''}}">
+            <view>该介质中声速:</view>
+            <cell-content>{{detail.addition.sound_speed}} (m/s)</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.refractive_index == ''}}">
+            <view>折射率:</view>
+            <cell-content>{{detail.addition.refractive_index}}</cell-content>
+        </cell>
+        <cell empty="{{detail.addition.thermal_conductivity == ''}}">
+            <view>导热系数:</view>
+            <cell-content>{{detail.addition.thermal_conductivity}} (W/mK)</cell-content>
+        </cell>
+    </cell-list>
+    <!-- 反应活性 -->
+    <cell-list header-text="反应活性" header-icon="icon-read6_reaction">
+        <cell empty="{{detail.reactivity.electronegtivity == ''}}">
+            <view>电负性:</view>
+            <cell-content>{{detail.reactivity.electronegtivity}}</cell-content>
+        </cell>
+        <cell empty="{{valenceElectrons == '' || valenceElectrons == null}}">
+            <view>化合价:</view>
+            <cell-content>{{valenceElectrons}}</cell-content>
+        </cell>
+        <cell empty="{{detail.reactivity.electron_affinity == ''}}">
+            <view>电子亲和性, kJ/mol:</view>
+            <cell-content>{{detail.reactivity.electron_affinity}} (千焦/摩尔)</cell-content>
+        </cell>
+    </cell-list>
+    <!-- 原子核性质 -->
+    <cell-list header-text="原子核性质" header-icon="icon-read7_yader">
+        <cell empty="{{detail.base.radioactive == ''}}">
+            <view>放射性:</view>
+            <cell-content>{{detail.base.radioactive == '+' ? '有' : '无'}}</cell-content>
+        </cell>
+        <cell empty="{{halfLife == ''}}">
+            <view>半衰期:</view>
+            <cell-content>{{halfLife}}</cell-content>
+        </cell>
+        <cell empty="{{lifetime == ''}}">
+            <view>寿命:</view>
+            <cell-content>{{lifetime}}</cell-content>
+        </cell>
+        <cell empty="{{detail.nuclear.neutron_cross == ''}}">
+            <view>中子截面, 靶恩:</view>
+            <cell-content>{{detail.nuclear.neutron_cross}} (b)</cell-content>
+        </cell>
+        <cell empty="{{!hazardNames || hazardNames.f == ''}}">
+            <view>可燃性:</view>
+            <cell-content>{{hazardNames.f}}</cell-content>
+        </cell>
+        <view class="nfpa-group">
+            <view class="left">
+                <cell empty="{{!hazardNames || hazardNames.h == ''}}">
+                    <view>健康危害:</view>
+                    <cell-content>{{hazardNames.h}}</cell-content>
+                </cell>
+                <cell empty="{{!hazardNames || hazardNames.a == ''}}">
+                    <view>反应活性:</view>
+                    <cell-content>{{hazardNames.a}}</cell-content>
+                </cell>
+                <cell empty="{{!hazardNames || hazardNames.s == ''}}">
+                    <view>特殊危害:</view>
+                    <cell-content>{{hazardNames.s}}</cell-content>
+                </cell>
+            </view>
+            <view class="right">
+                <nfpa f="{{hazards.f}}" h="{{hazards.h}}" a="{{hazards.a}}" s="{{hazards.s}}"/>
+            </view>
+        </view>
+    </cell-list>
+    <!-- 含量信息 -->
+    <cell-list header-text="含量信息" header-icon="icon-read3_earth">
+        <cell empty="{{detail.preval.universe_cont == ''}}">
+            <view>宇宙中有 "{{detail.base.symbol}}" 的大概含量 (百分比) :</view>
+            <cell-content>
+                <rich-text nodes="{{detail.preval.universe_cont}} %"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.preval.sun_contains == ''}}">
+            <view>太阳中有 "{{detail.base.symbol}}" 的大概含量 (百分比) :</view>
+            <cell-content>
+                <rich-text nodes="{{detail.preval.sun_contains}} %"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.preval.oceans_contain == ''}}">
+            <view>海洋中有 "{{detail.base.symbol}}" 的大概含量 (百分比) :</view>
+            <cell-content>
+                <rich-text nodes="{{detail.preval.oceans_contain}} %"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.preval.human_contains == ''}}">
+            <view>人体中有 "{{detail.base.symbol}}" 的大概含量 (百分比) :</view>
+            <cell-content>
+                <rich-text nodes="{{detail.preval.human_contains}} %"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.preval.earth_cont == ''}}">
+            <view>地壳中有 "{{detail.base.symbol}}" 的大概含量 (百分比) :</view>
+            <cell-content>
+                <rich-text nodes="{{detail.preval.earth_cont}} %"></rich-text>
+            </cell-content>
+        </cell>
+        <cell empty="{{detail.preval.meteorites_cont == ''}}">
+            <view>陨石中有 "{{detail.base.symbol}}" 的大概含量 (百分比) :</view>
+            <cell-content>
+                <rich-text nodes="{{detail.preval.meteorites_cont}} %"></rich-text>
+            </cell-content>
+        </cell>
+    </cell-list>
+    <alet bindclick="onAletLikeClick"></alet>
+    <view class="ad-view" style="padding-bottom: {{_bottom}};">
+      <ad unit-id="adunit-0ed2628872a2d06a"></ad>
+    </view>
+    <!-- 同位素暂未实现 -->
+    <!-- <view class="footer">
+        <button class="button">同位素 (36)</button>
+    </view> -->
+    <!-- 离屏渲染层 -->
+    <canvas id="canvas" type="2d" style="width:512px;height:512px;position:fixed;top:101%;left:101%;"></canvas>
+</view>
+<shell-alert wx:if="{{isShowShellAlert}}" bindtap="hideShellAlert" ele-image="{{eleShellImage}}" electron-config="{{electronConfig}}" electron-shell-text="{{electronShellText}}"></shell-alert>

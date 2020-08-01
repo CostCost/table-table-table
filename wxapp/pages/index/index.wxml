@@ -1,0 +1,50 @@
+<!-- index.wxml -->
+<view class="page" data-theme="dark">
+  <view class="scroll-view">
+    <view class="ptable">
+      <view class="left-bar">
+        <view class="bar-text" wx:for="{{table.height}}" wx:key="index">
+          <text>{{index>7 ? '' : index+1}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="top-bar">
+          <view class="bar-text" wx:for="{{table.width}}" wx:key="index">
+            <text>{{index+1}}</text>
+          </view>
+        </view>
+        <view class="content">
+          <view class="row" wx:for="{{table.height}}" wx:key="y" wx:for-index="y">
+            <view class="col" wx:for="{{table.width}}" wx:key="x" wx:for-index="x">
+              <block wx:if="{{table[x+1] && table[x+1][y+1]}}">
+                <navigator url="{{util.getNavUrl(table[x+1][y+1])}}">
+                  <pt-item 
+                    number="{{table[x+1][y+1]}}"
+                    active-category="{{category}}"></pt-item>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <movable-area class="category-group">
+    <movable-view x="{{catBtnX}}" y="{{catBtnY}}" direction="all" class="category-btn" bindtap="onCategoryClick">
+            <!-- <text>分类</text> -->
+      <iconfont name="icon-ic_filter" color="{{_isDark ? '#ffffff' : '#000000'}}" size="{{22}}"></iconfont>
+    </movable-view>
+  </movable-area>
+  <cat-dialog wx:if="{{showCatDialog}}" bindcategory="categoryChange" bindclose="closeCategory"></cat-dialog>
+</view>
+<wxs module="util">
+module.exports = {
+  getNavUrl: function(str){
+    if(str.indexOf('-') != -1){
+      return '';
+    }else{
+      return '/pages/element/element?number='+str;
+    }
+  }
+}
+</wxs>

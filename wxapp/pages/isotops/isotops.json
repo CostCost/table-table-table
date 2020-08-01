@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "同位素",
+  "usingComponents": {
+    "list-item": "../../components/list-item/list-item"
+  }
+}

@@ -1,0 +1,7 @@
+<view class="nfpa">
+    <image class="bg" mode="aspectFit" src="/assets/nfpa.png"/>
+    <view class="n-fir">{{(f && f != '-') ? f : ''}}</view>
+    <view class="n-hea">{{(h && h != '-') ? h : ''}}</view>
+    <view class="n-act">{{(a && a != '-') ? a : ''}}</view>
+    <view class="n-spe">{{(s && s != '-') ? s : ''}}</view>
+</view>

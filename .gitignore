@@ -102,3 +102,15 @@ dist
 
 # TernJS port file
 .tern-port
+doc/vector2svg.jar
+doc/xml2svg.js
+doc/svg/
+doc/package-lock.json
+doc/logo/logo.png
+doc/logo/logo200.png
+doc/last-parse.txt
+doc/2019年化学趣味知识竞赛题库及答案(完整版).doc
+doc/apk/
+wxapp/.vs/
+wxapp/.vscode/settings.json
+wxapp/package-lock.json

@@ -1,0 +1,16 @@
+<navigator class="item" hover-class="item-hover" style="{{height ? 'height:'+height+'px;' : ''}}" url="{{url}}">
+    <view class="icon" style="{{height ? 'width:'+height+'px;' : ''}}{{height ? 'height:'+height+'px;' : ''}}">
+        <slot name="icon"></slot>
+    </view>
+    <view class="main">
+        <view class="bg">
+            <slot name="bg"></slot>
+        </view>
+        <view class="content">
+            <slot></slot>
+        </view>
+    </view>
+    <view class="right">
+        <slot name="right"></slot>
+    </view>
+</navigator>

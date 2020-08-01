@@ -1,0 +1,169 @@
+<view class="page" data-theme="dark">
+    <view class="logo">
+        <image class="image" src="/assets/logo.png" mode="aspectFit"></image>
+        <view class="name">元素周期表 专业版</view>
+        <view class="version">版本: {{version || 'release'}}</view>
+    </view>
+    <!-- 在网络上关注我们 -->
+    <view class="header">
+        <view class="icon"><iconfont name="icon-ic_about_like" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">在网络上关注我们</view>
+    </view>
+    <view class="celler">
+        <view class="left">
+            <view class="icon" style="background: #266dd3;">
+                <iconfont name="icon-read3_earth" color="#ffffff" size="{{26}}"></iconfont>
+            </view>
+        </view>
+        <view class="item-content">
+            <view class="title">官网网站</view>
+            <view class="desc">huaxueyuansu.cn</view>
+        </view>
+    </view>
+    <view class="celler">
+        <view class="left">
+            <view class="icon" style="background:#09bb07;">
+                <iconfont name="icon-ic_bookmark" color="#ffffff" size="{{26}}"></iconfont>
+            </view>
+        </view>
+        <view class="item-content">
+            <view class="title">微信公众号</view>
+            <view class="desc">pxbomb</view>
+        </view>
+    </view>
+    <!-- 合作伙伴 -->
+    <view class="header" wx:if="{{oa}}">
+        <view class="icon"><iconfont name="icon-ic_kation2" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">合作伙伴</view>
+    </view>
+    <view class="celler" wx:if="{{oa}}">
+        <view class="left">
+            <view class="icon" style="background:#09bb07;">
+                <iconfont name="icon-WeChat" color="#ffffff" size="{{26}}"></iconfont>
+            </view>
+        </view>
+        <view class="item-content">
+            <view class="title">{{oa.name}}<text class="an" style="font-size: 12px;margin-left: 6px;">微信公众号</text></view>
+            <view class="desc an" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;">{{oa.desc}}</view>
+        </view>
+        <view class="right">
+            <view class="oa-btn" hover-class="oa-btn-hover" bindtap="onOaClick">复制公众号</view>
+        </view>
+    </view>
+    <!-- <view class="celler">
+        <view class="left">
+            <view class="icon" style="background:rgb(200,59,50);">
+                <iconfont name="icon-ic_perc" color="#ffffff" size="{{26}}"></iconfont>
+            </view>
+        </view>
+        <view class="item-content">
+            <view class="title">新浪微博</view>
+            <view class="desc">@化学元素</view>
+        </view>
+    </view> -->
+    <!-- 关于 -->
+    <view class="header">
+        <view class="icon"><iconfont name="icon-ic_bookmark" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">关于</view>
+    </view>
+    <view class="text-view">
+        <text>本软件基于微信小程序平台，为您更加生动和细致地呈现整个元素周期表。该应用使用国际纯粹与应用化学联合会（IUPAC）认可的长式周期表，并且提供溶解性表等系列工具。\n
+        应用功能：\n- 查看元素周期表任何元素的最新参数（包括大多数元素的图片）。\n- 想了解关于某个元素的更多内容吗？试试点击元素详情页中右上角的百科链接（包含图片）。\n- 查看溶解度表。\n- 通过元素名称、原子量来搜索元素（大小写字母皆可）。\n - 可使用10个规则来筛选元素：\n  •碱土金属\n •碱金属\n •过渡金属\n •后过渡金属\n •镧系元素\n •类金属\n •锕系元素\n •其他非金属\n •卤素\n •稀有气体\n 所选类别的元素将在搜索结果中列出，并在表中突出显示\n
+        </text>
+    </view>
+    <!-- 特别致敬 -->
+    <view class="header">
+        <view class="icon"><iconfont name="icon-ic_crown_gold" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">特别致敬</view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">Nikita Chernykh</view>
+            <view class="desc an">我们参考了他的 Таблица Менделеева PRO 手机应用</view>
+        </view>
+    </view>
+    <!-- 开发者 -->
+    <view class="header">
+        <view class="icon"><iconfont name="icon-read11_resh" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">首席开发者</view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">田伟汉</view>
+            <view class="desc">wilhan.tian@gmail.com</view>
+        </view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">dodoqumy</view>
+            <view class="desc">lijinyu25775@gmail.com</view>
+        </view>
+    </view>
+    <!-- 产品官 -->
+    <view class="header">
+        <view class="icon"><iconfont name="icon-read_favorite" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">首席产品官</view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">王小林</view>
+            <view class="desc">1262344969@qq.com</view>
+        </view>
+    </view>
+    <!-- 数据来源 -->
+    <view class="header">
+        <view class="icon"><iconfont name="icon-ic_helper" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">数据来源</view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">IUPAC</view>
+            <view class="desc an">iupac.org</view>
+        </view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">Wiki</view>
+            <view class="desc an">wiki.com</view>
+        </view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">Periodictable</view>
+            <view class="desc an">periodictable.com</view>
+        </view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">以及其它</view>
+            <view class="desc an">更多海内外专业网站贡献的数据和书籍</view>
+        </view>
+    </view>
+    <!-- 感谢 -->
+    <view class="header">
+        <view class="icon"><iconfont name="icon-ic_helper" color="#ffffff" size="{{24}}"></iconfont></view>
+        <view class="title">他们帮助了我们</view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">[我们正等待您的帮助]</view>
+            <view class="desc">他/她捐赠了我们</view>
+        </view>
+        <view class="right">
+            <iconfont name="icon-ic_crown_gold" color="#ffbb00" size="{{24}}"></iconfont>
+        </view>
+    </view>
+    <official-account></official-account>
+    <!-- <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">______</view>
+            <view class="desc">他/她帮助我们翻译</view>
+        </view>
+    </view>
+    <view class="celler">
+        <view class="item-content" style="padding-left:14px;padding-right:14px;">
+            <view class="title">______</view>
+            <view class="desc">他/她提出改进的意见</view>
+        </view>
+    </view> -->
+</view>
